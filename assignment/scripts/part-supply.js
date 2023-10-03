@@ -5,26 +5,33 @@ console.log('****** Part Supply *******');
 
 // 1. Create a variable called 'partsNeeded' with a value of the number 40.
 console.log('1. Create partsNeeded:');
-
+let partsNeeded = 40;
+console.log(' - Variable partsNeeded:', partsNeeded);
 
 // 2. Create a variable called 'supplyChanges' whose value is an array containing
 //    the following numbers: 3, 5, -6, 0, 7, 11.
 console.log('2. Create supplyChanges:');
-
+let supplyChanges = [3, 5, -6, 0, 7, 11];
+console.log(' - Array supplyChanges:', supplyChanges);
 
 // 3. Create a variable called 'secondItem' and assign it the value of the second
 //    item in the 'supplyChanges' array.
 console.log('3. Access the second value of supplyChanges:');
-
+let secondItem = supplyChanges[1];
+console.log(' - Variable secondItem:', secondItem);
 
 // 4. The last value in the 'supplyChanges' array was added by mistake.
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
 console.log('4. Remove the last value from supplyChanges:');
-
+let removedItem = supplyChanges.pop();
+console.log(' - Variable removedItem:', removedItem);
+console.log(' - New supplyChanges values:', supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Add the value 25 into supplyChanges.');
-
+supplyChanges.push(25);
+console.log(' - Addition to supplyChanges:', supplyChanges[5]);
+console.log(' - New values of supplyChanges:', supplyChanges);
 
 // 6. Create three new variables named 'positives', 'negatives', and
 //    'zeroes' whose values are empty arrays. Then, write a for loop
@@ -34,9 +41,30 @@ console.log('5. Add the value 25 into supplyChanges.');
 //      - If the value is a negative number, push it into the 'negatives' array.
 //      - If the value is a zero, push it into the 'zeroes' array.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
-
-
-
+let positives = [];
+let negatives = [];
+let zeroes = [];
+console.log(' - New Arrays: positives', positives, 'negatives', negatives, 'zeroes', zeroes);
+console.log(' - supplyChanges Values:', supplyChanges);
+for (let i=0; i<=5; i++){
+  console.log(' - Checking value', supplyChanges[i])
+  if(supplyChanges[i]>0){
+    console.log('   -', supplyChanges[i], 'is positive');
+    positives.push(supplyChanges[i]);
+    console.log('   - Added value to positives. New values:', positives);
+  }
+  else if(supplyChanges[i]<0){
+    console.log('   -', supplyChanges[i], 'is negative');
+    negatives.push(supplyChanges[i]);
+    console.log('   - Added value to negatives. New values:', negatives);
+  }
+  else if(supplyChanges[i]==0){
+    console.log('   -', supplyChanges[i], 'is zero');
+    zeroes.push(supplyChanges[i]);
+    console.log('   - Added value to zeroes. New values:', zeroes);
+  }
+}
+console.log(' - Final values: positives', positives, 'negatives', negatives, 'zeroes', zeroes);
 
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
